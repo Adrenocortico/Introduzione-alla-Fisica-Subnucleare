@@ -1,0 +1,487 @@
+\documentclass[10pt, onecolumn, a4paper]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{braket}
+\usepackage{calrsfs}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage[output-decimal-marker = {.}, exponent-product = \cdot]{siunitx}
+\usepackage{tabularx}
+\usepackage{verbatim}
+
+\def\b{\textbf}
+\def\bb{\mathbf}
+\def\grad{\nabla}
+\def\rot{\grad\times}
+\def\div{\grad\cdot}
+\def\const{\textrm{const}}
+\def\sat{\textrm{sat}}
+\def\loc{\textrm{loc}}
+\def\cutoff{\textrm{cutoff}}
+\def\({\left(}
+\def\){\right)}
+\def\[{\left[}
+\def\]{\right]}
+\def\<{\left<}
+\def\>{\right>}
+
+\title{Subnucleare}
+\author{Francesco Dulio}
+\date{2014}
+\begin{document}
+%\maketitle
+\section{Interazioni} %Interazioni
+\begin{center}\begin{tabularx}{\textwidth}{l | c c c c}
+\toprule
+Interazione & Gravità & Electromagnetic & Forte & Debole\\
+\midrule
+Between & tutte & tutte & quark & lep, quark, l-q \\
+Teoria & Newton & QED & QCD & \\
+Bosone & gravitone & fotone $\gamma$ & 8 gluoni $g$ & $W^+$, $Z^0$ \\
+Massa bos & & $0$ & $0$ & \SI{100}{GeV} \\
+Source & massa & electric ch. & colore & weak ch.\\
+\midrule
+\multirow{2}{*}{CC} 	& \multirow{2}{*}{$KM^2$} 	& $\alpha=e^2/4\pi$ 	& \multirow{2}{*}{$\alpha_s\le 1$} & $M^2G_F$ 	\\
+				&					& $=1/137$ 		&						& $=1/29$		\\
+Potenziale & $-GMm/r$ & $-\alpha/r$ & $-4\alpha_s/3r+kr$ & $-f\alpha_s/r$\\ [0.6ex]
+Lifetime (\si{s}) & & \SI{e-19}{} & \SI{e-23}{} & \SI{e-10}{} \\
+$\sigma$ (\si{cm^{-3}}) &  &  & \SI{e-26} & \SI{e-38}{} \\
+\bottomrule
+\end{tabularx}\end{center}
+
+\section{Simmetrie} %Simmetrie
+\begin{center}\begin{tabularx}{\textwidth}{l | c c c | c}
+\toprule
+Parità & P & C & CP & G \\
+\midrule
+\multirow{2}{*}{Espressione} & \multirow{2}{*}{$P\Phi\left(\bb{r}\right)=\Phi\left(-\bb{r}\right)$} & $C\Phi\left(\pi^+\right)=\Phi\left(\pi^-\right)$ & \multirow{2}{*}{$H=\frac{\bb{s}\cdot \bb{p}}{sp}$} & $G=CR$\\
+ & & $C\Phi\left(\pi^0\right)=\pm\Phi\left(\pi^0\right)$ & & $=Ce^{i\pi I_2}$ \\
+Conservazione & forte, e.m. & forte, e.m. & debole & \\ [0.6ex]
+\bottomrule
+\end{tabularx}\end{center}
+
+\section{Leptoni} %Leptoni
+\begin{center}\begin{tabularx}{\textwidth}{X X | c c | c c c}
+\toprule
+Leptone & & Massa (\si{MeV}) & Carica ($e$) & $L_e$ & $L_\mu$ & $L_\tau$ \\
+\midrule
+Elettrone & $e^-$ & \SI{0.5} & $-1$ & $1$ & $0$ & $0$ \\
+Neutrino & $\nu_e$ & <\SI{3}{eV} & $0$ & $1$ & $0$ & $0$ \\
+Muone & $\mu^-$ & \SI{105} & $-1$ & $0$ & $1$ & $0$ \\
+Neutrino & $\nu_\mu$ & <\SI{0.19} & $0$ & $0$ & $1$ & $0$ \\
+Tau & $\tau^-$ & \SI{1777} & $-1$ & $0$ & $0$ & $1$ \\
+Neutrino & $\nu_\tau$ & <\SI{18.2} & $0$ & $0$ & $0$ & $1$ \\
+\bottomrule
+\end{tabularx}\end{center}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{X | c c c | c c c c}
+\toprule
+Particella & I & II & III & Q ($e$) & Isospin & Ipercarica & Colore \\
+\midrule
+Leptoni LH & $\nu_e$ & $\nu_\mu$ & $\nu_\tau$ & $0$ & $1/2$ & $-1$ & $-$ \\
+ & $e$ & $\mu$ & $\tau$ & $-1$ & $1/2$ & $-1$ & $-$ \\
+Leptoni RH& $e$ & $\mu$ & $\tau$ & $-1$ & $0$ & $-2$ & $-$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Quarks} %Quarks
+$$\textrm{Ipercarica: }Y=B^*+S \qquad \textrm{Numero barionico: }B^*=\frac{1}{3}$$
+$$Q=I_3+\frac{Y}{2}$$
+\begin{center}\begin{tabularx}{\textwidth}{l c | c c c | c c c c | c c}
+\toprule
+\multirow{2}{*}{Quark} &	& $m_q$ 		& $m'_q$ 		& $Q$ 		& \multirow{2}{*}{$S$} & \multirow{2}{*}{$C$} 	& \multirow{2}{*}{$B$} & \multirow{2}{*}{$T$} & \multirow{2}{*}{$I_3$} 	& \multirow{2}{*}{$Y$} \\
+				&	& (\si{GeV}) 	& (\si{MeV}) 	& ($e$) 		&				&					&				&				&					& 				\\
+\midrule
+Up & $u$ & \SI{0.33} & \SI{1.5}-\SI{3.3} & $2/3$ & $0$ & $0$ & $0$ & $0$ & $1/2$ & $1/3$ \\
+Down & $d$ & \SI{0.33} & \SI{3.5}-\SI{6.0} & $-1/3$ & $0$ & $0$ & $0$ & $0$ & $-1/2$ & $1/3$ \\
+\midrule
+Charme & $c$ & \SI{1.58} & \SI{1270} & $2/3$ & $0$ & $1$ & $0$ & $0$ & $1/2$ & $1/3$ \\
+Strange & $s$ & \SI{0.47} & \SI{104} & $-1/3$ & $-1$ & $0$ & $0$ & $0$ & $0$ & $-2/3$ \\
+\midrule
+Top & $t$ & \SI{174} & \SI{171200} & $2/3$ & $0$ & $0$ & $0$ & $1$ & $1/2$ & $1/3$ \\
+Bottom & $b$ & \SI{4.58} & \SI{4200} & $-1/3$ & $0$ & $0$ & $-1$ & $0$ & $-1/2$ & $1/3$ \\
+\bottomrule
+\end{tabularx}\end{center}
+\begin{center}
+\begin{tabularx}{\textwidth}{X | c c c | c c c c}
+\toprule
+Particella & I & II & III & Q ($e$) & Isospin & Ipercarica & Colore \\
+\midrule
+Quarks LH& $u$ & $c$ & $t$ & $+2/3$ & $1/2$ & $+1/3$ & $r,b,g$ \\
+ & $d$ & $s$ & $b$ & $-1/3$ & $1/2$ & $+1/3$ & $r,b,g$ \\
+Quarks RH& $u$ & $c$ & $t$ & $+2/3$ & $0$ & $+4/3$ & $r,b,g$ \\
+ & $d$ & $s$ & $b$ & $-1/3$ & $0$ & $-2/3$ & $r,b,g$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Quark top} %Quark top
+$$p+\bar p\to t+\bar t+ any$$
+$$t\to W+b\to l+\nu_l+b \qquad t\to W+b\to\bar q+q'+b$$
+$$t+\bar t\to W^++B+W^-+\bar b\to \bar l +\nu_l+b+l+\bar\nu_l+\bar b\to l+\bar l+\bb{p_T}+ \(\le2 \textrm{ jets}\)$$
+$$t+\bar t\to W^++B+W^-+\bar b\to \tau^++\nu_\tau+b+\tau^-+\bar\nu_\tau+\bar b \to \tau^++\tau^-+\bb{p_T}+ \(\le2 \textrm{ jets}\)$$
+$$t+\bar t\to W^++B+W^-+\bar b\to \tau+\nu_\tau+b+l+\bar\nu_l+\bar b\to \tau+l+\bb{p_T}+ \(\le2 \textrm{ jets}\)$$
+$$t+\bar t\to W^++B+W^-+\bar b\to \bar l+\nu_l+b+q'+\bar q+\bar b\to l+\bb{p_T}+ \(\le4 \textrm{ jets}\)$$
+$$t+\bar t\to W^++B+W^-+\bar b\to \tau+\nu_\tau+b+q'+\bar q+\bar b\to \tau+\bb{p_T}+ \(\le4 \textrm{ jets}\)$$
+$$t+\bar t\to W^++B+W^-+\bar b\to \bar q'+q+b+q'+\bar q+\bar b\to \(\le6 \textrm{ jets}\)$$
+
+\section{Mesoni} %Mesoni
+$$\Delta E_{hf}\(qq\)=\frac{4\pi\alpha_s}{9}\left|\Psi\(0\)\right|\bb{\sigma_i}\bb{\sigma_j}=\frac{\Delta E_{hf}\(q\bar q\)}{2}$$
+$$J^{PC}:\begin{cases} 0 & \textrm{ pseudoscalari} \\
+1 & {\textrm{ vettori}}\end{cases}$$
+\begin{center}\begin{tabularx}{\textwidth}{l | c c c c | l}
+\toprule
+Mesone & Composizione & Carica ($e$) & Massa (\si{MeV}) & Decadimento & $J^{PC}$ \\
+\midrule
+$\pi^+$ & $u\bar d$ & $+1$ & $140$ & $\mu^+\nu_\mu$ & $0^{-}$ \\
+$\pi^0$ & $\frac{d\bar d-u\bar u}{\sqrt{2}}$ & $0$ & $135$ & $\gamma\gamma$ & $0^{-+}$ \\
+$\pi^-$ & $d\bar u$ & $-1$ & $140$ & $\mu^-\bar\nu_\mu$ & $0^{-}$ \\
+\midrule
+$\eta_8$ & $\frac{d\bar d+u\bar u-2s\bar s}{\sqrt{6}}$ & $0$ & $549$ & $\gamma\gamma$ & $0^{-+}$ \\
+$\eta_0$ & $\frac{d\bar d+u\bar u+s\bar s}{\sqrt{3}}$ & $0$ & $958$ & $2\gamma$, $\eta+2\pi$ & $0^{-+}$ \\
+\midrule
+$B^+$ & $u\bar b$ & $+1$ & $5279$ & & $0^{-}$ \\
+$B^0$ & $d\bar b$ & $0$ & $5279.4$ & & $0^{-}$ \\
+$B^-$ & $s\bar b$ & $-1$ & $5369.6$ & & $0^{-}$ \\
+$B^+_c$ & $c\bar b$ & $+1$ & $6400$ & & $0^{-}$ \\
+\midrule
+$D^+$ & $c\bar d$ & $+1$ & $1869$ & & $0^{-}$ \\
+$D^0$ & $c\bar u$ & $0$ & $1864$ & & $0^{-}$ \\
+$D^-$ & $s\bar c$ & $-1$ & $1968$ & & $0^{-}$ \\
+\midrule
+$K^+$ & $u\bar s$ & $+1$ & $494$ & $\mu^+\nu_\mu$ & $0^{-}$ \\
+$K^0$ & $d\bar s$ & $0$ & $498$ & $\pi^+\pi^-$ & $0^{-}$ \\
+$K^-$ & $s\bar u$ & $-1$ & $494$ & $\mu^-\bar\nu_\mu$ & $0^{-}$ \\
+$\bar K^0$ & $s\bar d$ & $0$ & $498$ & $\pi^+\pi^-$ \\
+\midrule
+\midrule
+${K^*}^+$ & $u\bar s$ & $+1$ & $892$ & $K\pi$ & $1^{--}$ \\
+${K^*}^0$ & $d\bar s$ & $0$ & $892$ & $K\pi$ & $1^{--}$ \\
+${K^*}^-$ & $s\bar u$ & $-1$ & $892$ & $K\pi$ & $1^{--}$ \\
+\midrule
+$\rho^+$ & $d\bar u$ & $+1$ & $776$ & $2\pi$ & $1^{-}$ \\
+$\rho^0$ & $\frac{u\bar u-d\bar d}{\sqrt{2}}$ & $0$ & $776$ & $2\pi$ & $1^{--}$ \\
+$\rho^-$ & $u\bar d$ & $-1$ & $776$ & $2\pi$ & $1^{-}$ \\
+\midrule
+$\omega$ & $\frac{d\bar d+u\bar u}{\sqrt{2}}$ & $0$ & $783$ & $3\pi$ & $1^{--}$ \\
+\midrule
+$\Phi$ & $s\bar s$ & $0$ & $1019$ & $K\bar K$ & $1^{--}$ \\
+$J/\Psi$ & $c\bar c$ & $0$ & $3097$ & & $1^{--}$ \\
+$\Upsilon$ & $b\bar b$ & $0$ & $9460.3$ & $B^0\bar B^0$ & $1^{--}$ \\
+$\theta$ & $t\bar t$ & $0$ & $$ & $2\pi$ & $1^{-},0^+$ \\
+\bottomrule
+\end{tabularx}\end{center}
+
+\subsection{Mesone $K$} %Mesone $K$
+$$\left|K_1\right>=\frac{\left|K^0\right>+\left|\bar K^0\right>}{\sqrt{2}} \qquad \left|K_2\right>=\frac{\left|K^0\right>-\left|\bar K^0\right>}{\sqrt{2}}$$
+$$CP\left|K_1\right>=+1\left|K_1\right> \qquad CP\left|K_2\right>=-1\left|K_2\right>$$
+\begin{center}
+\begin{tabularx}{\textwidth}{X c | X c | c }
+\toprule
+\multicolumn{2}{c}{Produzione} & \multicolumn{2}{c}{Decadimento} & Lifetime (\si{s}) \\
+\midrule
+$K^0$ & $S=+1$ & $K_1=K_S\to 2\pi$ & $CP=+1$ & $\tau_1=\SI{0.9e-10}{}$ \\
+$\bar K^0$ & $S=-1$ & $K_2=K_L\to 3\pi$ & $CP=-1$ & $\tau_2=\SI{0.5e-7}{}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+$$\pi^-+p\to\Lambda + K^0 \qquad \pi^-+p\to\bar K^0+K^++p \qquad \pi^-+p\to\bar K^0+\bar\Lambda+n+n$$
+$$\textrm{S: } 0;0;-1;+1 \qquad \textrm{S: } 0;0;-1;+1;0 \qquad \textrm{S: } 0;0;-1;+1;0;0$$
+$$\left|K_S^0\>=\frac{\left|K_1\>+\epsilon\left|K_2\>}{\sqrt{1+\epsilon^2}} \qquad \left|K_L^0\>=\frac{\left|K_2\>+\epsilon\left|K_1\>}{\sqrt{1+\epsilon^2}} \qquad |\epsilon|=\SI{2.3e-3}{}$$
+
+\section{Barioni} %Barioni
+$$M=M_0+M_1Y+M_2\[I\(I+1\)-\frac{Y^2}{4}\]$$
+$$K=\frac{4\pi\alpha_s}{9}\left|\Psi\(0\)\right|^2$$
+$$\Delta E_{fs}=-\alpha^4m\(\frac{1}{4n^2}\)\(\frac{4n}{2J+1}-\frac{3}{2}\)$$
+$$\Delta E_{hf}=\alpha^4m\(\frac{m}{m_p}\)\(\frac{\gamma_p}{2n^3}\)\(\frac{\pm 4}{\(2F+1\)\(2I+1\)}\)$$
+\begin{center}\begin{tabularx}{\textwidth}{X l | c c c | c c}
+\toprule
+\multirow{2}{*}{Barione} 	& 	& \multirow{2}{*}{Quark} 	& Carica 	& Massa 		& \multirow{2}{*}{$\Delta E_{hf}/K$} 	& \multirow{2}{*}{$J^{P}$} 	\\
+					&	&					& ($e$) 	& (\si{MeV}) 	&							&					\\
+\midrule
+ $N$ & & $qqq$ &  & $\sim939$ & $-3/m^2_n$ \\
+ & $p$ & $uud$ & $+1$ & & & $1/2^+$ \\
+ & $n$ & $udd$ & $0$ & & & $1/2^+$ \\
+\midrule
+$\Delta$ &  & $qqq$ &  & $\sim1232$ &  \\
+ & $\Delta^{++}$ & $uuu$ & $+2$ &  & & $3/2^+$ \\
+ & $\Delta^+$ & $duu$ & $+1$ &  & & $3/2^+$ \\
+ & $\Delta^0$ & $ddu$ & $0$ &  & & $3/2^+$ \\
+ & $\Delta^-$ & $ddd$ & $-1$ &  & & $3/2^+$ \\
+\midrule
+ $\Sigma$ & & $qqs$ &  & $\sim1193$ & $1/m^2_n-4/\left(m_nm_s\right)$ &  \\
+ $\Sigma$ & & $qqs$ &  & $\sim1384$ & $1/m^2_n+2/\left(m_nm_s\right)$ &  \\
+ & $\Sigma^+$ & $uus$ & $+1$ &  & & $1/2^+$ \\
+ & $\Sigma^0$ & $dus$ & $0$ &  & & $1/2^+$ \\
+ & $\Sigma^-$ & $dds$ & $-1$ &  & & $1/2^+$ \\
+ & $\Sigma^{++}_c$ & $uuc$ & $+2$ & $2455$ & & $1/2^+$\\
+\midrule
+ $\Xi$ & & $qss$ &  & $\sim1318$ & $1/m^2_n-4/\left(m_nm_s\right)$ & \\
+ $\Xi$ & & $qss$ &  & $\sim1533$ & $1/m^2_n+2/\left(m_nm_s\right)$ & \\
+ & $\Xi^0$ & $uss$ & $0$ &  & & $1/2^+$ \\
+ & $\Xi^-$ & $dss$ & $-1$ &  & & $1/2^+$ \\
+\midrule
+ & $\Lambda$ & $uds$ & $0$ & $1116$ & $-3/m^2_n$ & $1/2^+$ \\
+ & $\Lambda^0_b$ & $udb$ & $0$ & $5624$ & & $1/2^+$ \\
+ & $\Lambda^+_c$ & $udc$ & $+1$ & $2285$ & & $1/2^+$  \\
+ \midrule
+ & $\Omega^-$ & $sss$ & $-1$ & $1672$ & $3/m^2_n$ & $3/2^+$ \\
+\bottomrule
+\end{tabularx}\end{center}
+
+\section{Reazioni e decadimenti} %Reazioni e decadimenti
+$$N\(t\)=N\(0\)e^{-\Gamma t}=\sigma L_{int} \qquad \textrm{Cross section: } \sigma=\frac{W_{if}}{\Phi} \qquad \textrm{Decay rate: }\Gamma=W_{if}$$
+$$\textrm{Event rate: }R=\frac{dN}{dt}=\sigma L \qquad \textrm{Luminosity: }L_{\textrm{int}}=\int{L dt}$$
+$$\textrm{Flux: } \Phi=n_av_i \qquad \frac{dN}{dt}=\Phi n_b\sigma=n_av_in_b\sigma$$
+$$\textrm{Transition rate: } W_{if}=\Phi\sigma=v_i\sigma \qquad M_{if}=\int{\Psi L_{int}dV} \qquad \rho_f=\frac{dN}{dE_0}$$
+$$\textrm{Fermi golden rule: } W_{if}=\frac{2\pi}{\hbar}|M_{if}|^2\rho_f$$
+
+\begin{center}
+\begin{tabularx}{\textwidth}{l | c | c}
+\toprule
+Decadimento & $a \to b+c$ & $a+b \to c+d$ \\
+\midrule
+Diff decay rate & $\frac{1}{8\pi m_a}\int{|M_{if}|^2\frac{|\bb{p}|}{E^*}dE^*}\delta\(m_a-E^*\)$ & \\ [2ex]
+Decay rate & $\frac{|\bb{p}||M_{if}|^2}{8\pi m_a^2}$ & $\sigma\Phi$ \\ [2ex]
+Diff cross section & $\frac{\Gamma}{\Phi}$ & $\frac{1}{\(8\pi\)^2}\frac{|M_{if}|^2}{\(E_a+E_b\)^2}\frac{\bb{p}_f}{\bb{p}_i}$ \\ [2ex]
+\bottomrule
+\end{tabularx}
+\end{center}
+$$\textrm{Breit-Wigner formula relativistica: }P\(m\)\propto \frac{1}{\(m-m_0\)^2+\frac{\Gamma}{4}}$$
+
+\section{QED} %QED
+
+$$\textrm{Schrödinger: }\(-\frac{1}{2m}\)\bb{\grad}^2\Psi=i\frac{\partial\Phi}{\partial t}$$
+$$\textrm{Klein-Gordon spin 0: }-\frac{\partial^2\Psi}{\partial t^2}+\bb{\grad}^2\Psi=m^2\Psi \qquad \textrm{Dirac spin }\frac{1}{2}\textrm{: } i\gamma^{\mu}\partial_{\mu}\Psi=m\Psi$$
+$$\(\gamma^{\mu}p_{\mu}\pm m\)u=0 \qquad E=\pm\sqrt{\bb{p}^2+m^2} \qquad g_e=\sqrt{4\pi e^2}=\sqrt{4\pi\alpha}$$
+$$\textrm{Vertice: } i\gamma_{\mu}g_e\(2\pi\)^4\delta^4\(k_1+k_2+k_3\)$$
+$$\textrm{Leptoni, quarks: } \frac{i\(\gamma^{\mu}q_{\mu}+m\)}{q^2-m^2}\frac{d^4q}{\(2\pi\)^4} \qquad \textrm{Fotoni: } \frac{ig^{\mu\nu}}{q^2}\frac{d^4q}{\(2\pi\)^4}$$
+$$M_{if}=-\frac{g_e^2}{\(p_1-p_3\)^2}\[\bar u_{s_{3}}\(p_3\)\gamma^{\mu}u_{s_{1}}\(p_1\)\]\[\bar u_{s_{4}}\(p_4\)\gamma_{\mu}u_{s_{2}}\(p_2\)\]$$
+\begin{center}
+\begin{tabularx}{\textwidth}{X | l}
+\toprule
+Scattering & Nome \\
+\midrule
+$e^-+\mu^-\to e^-+\mu^-$ & elastic scattering (particelle di Dirac) \\
+$e^-+e^-\to e^-+e^-$ & scattering \\
+$e^-+e^+\to e^-+e^+$ & scattering \\
+$e^-+\gamma\to e^-+\gamma$ & Compton scattering \\
+$e^-+p\to e^-+p$ & elastic scattering (esclusiva) \\
+$e^-+p\to e^-+X$ & inelastic scattering (inclusiva) \\
+$e^-+e^+\to \gamma,Z^0\to q+\bar q\to adroni$ & annihilation into hadrons \\
+\bottomrule
+\end{tabularx}
+\end{center}
+$$g_R=g_e\sqrt{1-\frac{g_e^2}{12\pi^2}\[\ln{\(\frac{M^2_{\cutoff}}{m^2}\)}\]}=\sqrt{4\pi\alpha\(q^2\)}$$
+$$\alpha\(q^2\)\equiv\alpha\(q_0^2\)\[1+\frac{\alpha\(q_0^2\)}{3\pi}f\(-\frac{q^2}{m^2}\)\]$$
+$$M_{if}=-g_R^2\[\bar u\(3\)\gamma^{\mu}u\(1\)\]\frac{g_{\mu\nu}}{q^2}\[1+\frac{g_R^2}{12\pi^2}f\(-\frac{q^2}{m^2}\)\]\[\bar u\(4\)\gamma^{\nu}u\(2\)\]$$
+
+\section{Interazione elettromagnetica} %Interazione elettromagnetica
+\subsection{$e^-+\mu^-\to e^-+\mu^-$} %e^-\mu^-\to e^-\mu^-
+$$M_{if}=-\frac{g_e^2}{\(p_1-p_3\)^2}\[\bar u_{s_{3}}\(p_3\)\gamma^{\mu}u_{s_{1}}\(p_1\)\]\[\bar u_{s_{4}}\(p_4\)\gamma_{\mu}u_{s_{2}}\(p_2\)\]=-\frac{g_e^2}{\(p_1-p_3\)^2}J_e^{\lambda}J_{\mu,\lambda}$$
+$$\left<|M_{if}|^2\right>=\frac{8g_e^4}{\(p_1-p_3\)^4}\[\(p_1\cdot p_2\)\(p_3\cdot p_4\)+\(p_1\cdot p_4\)\(p_3\cdot p_2\)-\(p_1\cdot p_3\)m_2^2\]$$
+$$\textrm{Formula di Dirac: } \frac{d\sigma}{d\Omega}=\frac{\alpha^2}{4E^2\sin^4{\(\frac{\theta}{2}\)}}\frac{E'}{E}\[\cos^2{\(\frac{\theta}{2}\)}-\frac{q^2}{2m_{\mu}^2}\sin^2{\(\frac{\theta}{2}\)}\]$$
+
+\subsection{$e^-+p\to e^-+p$} %e^-p\to e^-p
+$$J_{p,\lambda}\equiv \bar u\(4\)\[F_1\(q^2\)\gamma_{\lambda}+\frac{k}{2M_p}F_2\(q^2\)i\sigma_{\lambda\nu}q^{\nu}\]u\(2\) \qquad k=1.79$$
+$$\textrm{Fattore di forma elettrico: } F_1 \qquad \textrm{Fattore di forma magnetico: } F_2$$
+$$G_E=F_1+\frac{kq^2}{4M^2}F_2 \qquad G_M=F_1+kF_2$$
+$$\textrm{Rosenbluth: } \frac{d\sigma}{d\Omega}=\frac{\alpha^2}{4E^2\sin^4{\(\frac{\theta}{2}\)}}\frac{E'}{E}\left\{\[F_1^2-\frac{kq^2}{4M_p^2}F^2_2\]\cos^2{\frac{\theta}{2}}-\frac{q^2}{2M_p^2}\[F_1+kF_2\]^2\sin^2{\(\frac{\theta}{2}\)}\right\}$$
+
+\subsection{$e^-+p\to e^-+X$} %e^-p\to e^-X
+$$\frac{d\sigma}{dE'd\Omega}=\frac{\alpha^2}{4E^2\sin^4{\(\frac{\theta}{2}\)}}\[2W_1\(q^2,x\)\sin^2{\(\frac{\theta}{2}\)}+W_2\(q^2,x\)\cos^2{\(\frac{\theta}{2}\)}\]$$
+$$\textrm{Fattori di struttura: } W_1=\frac{\[F_1+kF_2\]^2}{2M_p}\delta\(x-1\) \qquad W_2=-\frac{2M}{q^2}\[F_1^2-\frac{kq^2}{4M_p^2}F_2^2\]\delta\(x-1\)$$
+
+\subsection{Deep inelastic scattering} %Deep inelastic scattering
+$$\textrm{Relazione Callan-Gross: } 2xF_1\(x\)=F_2\(x\)$$
+$$\textrm{Funzione di struttura: } F_1=W_1M_p \qquad \textrm{Funzione di struttura: } F_2=-\frac{q^2}{2M_px}W_2$$
+$$W_1^i=\frac{Q_i^2}{2M_p}\delta\(x-z_i\) \qquad W_2^i=-\frac{2x^2M_pQ_i^2}{q^2}\delta\(x-z_i\)$$
+Considerando il protone come $uud$:
+$$F_1\(x\)=\frac{1}{2}\[2\(\frac{2}{3}\)^2\delta\(\frac{m_u}{M_p}-x\)+\(-\frac{1}{3}\)^2\delta\(\frac{m_d}{M_p}-x\)\]=\frac{1}{2}\delta\(\frac{m_u}{M_p}-x\)$$
+$$F_2\(x\)=x\delta\(\frac{m_u}{M_p}-x\)$$
+
+\subsection{$e^-+e^+\to \gamma,Z^0\to q+\bar q\to adroni$} %e^-e^+\to \gamma,Z^0\to q\bar q\to adroni
+$$M_{if}=-\frac{Qg_e^2}{\(p_1+p_2\)^2}\[\bar v\(2\)\gamma_{\mu}u\(1\)\]\[\bar u\(3\)\gamma^{\mu}v\(4\)\]$$
+$$\sigma=\frac{\pi}{3}\(\frac{Q\alpha}{E}\)^2\sqrt{1-\frac{M^2}{E^2}}\sqrt{1-\frac{m^2}{E^2}}\(1+\frac{M^2}{2E^2}\)\(1+\frac{m^2}{2E^2}\)$$
+
+\section{Interazione debole} %Interazione debole
+\begin{center}
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+Corrente & Carica CC & Neutra NC \\
+\midrule
+Mediatore & $W^{\pm}$ & $Z^0$ \\
+$\Delta Q$ & $\neq 0$ & $=0$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+$$W^{\pm}\textrm{ propagatore: } -\frac{i\(g_{\mu\nu}-\frac{q_{\mu}q_{\nu}}{M_W^2}\)}{q^2-M_W^2} \qquad Z^0 \textrm{ propagatore: } -\frac{i\(g_{\mu\nu}-\frac{q_{\mu}q_{\nu}}{M_Z^2}\)}{q^2-M_Z^2}$$
+$$\textrm{Se } q^2\ll M_{W,Z}^2 \Longrightarrow \frac{ig_{\mu\nu}}{M_{W,Z}^2}$$
+$$\textrm{Vertice CC: } -\frac{ig_W}{\sqrt{8}}\[\gamma^{\mu}\(1-\gamma^5\)\] \qquad \textrm{Vertice NC: } -\frac{ig_Z}{2}\[\gamma^{\mu}\(C_V-C_A\gamma^5\)\]$$
+$$C_V=\(T_f^3\)-2\sin^2{\(\theta_W\)}Q_f \qquad \sin^2{\(\theta_W\)}=\SI{0.23153}{}\pm\SI{0.00016}{}$$
+$$M_W=\SI{80.419}{}\pm\SI{0.056}{GeV} \qquad M_Z=\SI{91.1882}{}\pm\SI{0.0022}{GeV}$$
+\begin{center}
+\begin{tabularx}{\textwidth}{X | c c c | c c}
+\toprule
+ & $Q_f$ ($e$) & $\(T_f^3\)_{LH}$ & $\(T_f^3\)_{RH}$ & $C_{V,f}$ & $C_{A,f}$ \\
+\midrule
+$\nu_e, \nu_\mu, \nu_\tau$ & $0$ & $+1/2$ &  & $+1/2$ & $+1/2$ \\
+$e, \mu, \tau$ & $-1$ & $-1/2$ & $0$ & $-1/2+2\sin^2{\theta_W}$ & $-1/2$ \\
+\midrule
+$u, c, t$ & $+2/3$ & $+1/2$ & $0$ & $+1/2-4/3\sin^2{\theta_W}$ & $+1/2$ \\
+$d, s, b$ & $-1/3$ & $-1/2$ & $0$ & $-1/2+2/3\sin^2{\theta_W}$ & $-1/2$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\begin{center}
+\begin{tabularx}{\textwidth}{X X}
+\toprule
+Mediatore & Decadimento \\
+\midrule
+$W^-$ & $e^-\bar\nu_e, \mu^-\bar\nu_\mu, \tau^-\bar\nu_\tau$ \\
+$W^+$ & $e^+\nu_e, \mu^+\nu_\mu, \tau^+\nu_\tau$ \\
+$W^{\pm}$ & $q'\bar q$ \\
+\midrule
+$Z^0$ & $e^+e^-, \mu^+\mu^-, \tau^+\tau-, \nu\bar\nu, q\bar q$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\begin{center}
+\begin{tabularx}{\textwidth}{X | l}
+\toprule
+Scattering & Nome \\
+\midrule
+$\nu_\mu+e^-\to \mu^-+\nu_e$ & quasi-elastic scattering \\
+$\mu^-\to \bar\nu_e+\nu_\mu+e^-$ & muon decay \\
+$n\to \bar\nu_e+p+e^-$ & neutron $\beta$ decay \\
+$\pi\to l+\nu_l$ & $\pi$ meson decay \\
+$\nu_\mu+e^-\to \nu_\mu+e^-$ & elastic scattering \\
+$e^-+e^+\to \gamma,Z^0\to f+\bar f$ & electron-positron annihilation at $Z^0$ pole \\
+$\nu_e+e^-\to e^-+\nu_e$ & elastic scattering \\
+$\bar\nu_e+e^-\to e^-+\bar\nu_e$ & elastic scatterin \\
+$\nu_\mu+q\to \mu^-+q'$ & scattering \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{$\nu_\mu+e^-\to \mu^-+\nu_e$} %\nu_\mu+e^-\to \mu^-+\nu_e
+$$M_{if}=\frac{g_W^2}{8M_W^2}\[\bar u\(3\)\gamma^{\mu}\(1-\gamma^5\)u\(1\)\]\[\bar u\(4\)\gamma_{\mu}\(1-\gamma^5\)u\(2\)\]$$
+$$\<\left|M_{if}\right|^2\>=2\(\frac{g_W}{M_W}\)^4\(p_1\cdot p_2\)\(p_3\cdot p_4\) \qquad \sigma=\frac{1}{8\pi}\[\(\frac{g_W}{M_W}\)^2E\]^2\[1-\(\frac{m_{\mu}}{2E}\)^2\]^2$$
+
+\subsection{$\mu^-\to \bar\nu_e+\nu_\mu+e^-$} %\mu^-\to \bar\nu_e+\nu_\mu+e^-
+$$M_{if}=\frac{g_W^2}{8M_W^2}\[\bar u\(3\)\gamma^{\mu}\(1-\gamma^5\)u\(1\)\]\[\bar u\(4\)\gamma_{\mu}\(1-\gamma^5\)u\(2\)\]$$
+$$\<\left|M_{if}\right|^2\>=2\(\frac{g_W}{M_W}\)^4\(p_1\cdot p_2\)\(p_3\cdot p_4\) \qquad \Gamma=\(\frac{g_W}{M_W}\)^4\frac{m_{\mu}^5}{12\(8\pi\)^3}=\frac{G_F^2m_{\mu}^5}{192\pi^3}$$
+$$\textrm{Fermi CC: } G_F=\frac{\sqrt{2}}{8}\(\frac{g_W}{M_W}\)^2=\SI{1.166e-5}{GeV^{-2}}$$
+
+\subsection{Decadimento $\beta$: $n\to p+e^-+\bar\nu_e$} %n\to \bar\nu_e+p+e^-
+$$M_{if}=\frac{g_W^2}{8M_W^2}\[\bar u\(3\)\gamma^{\mu}\(C_V-C_A\gamma^5\)u\(1\)\]\[\bar u\(4\)\gamma_{\mu}\(1-\gamma^5\)v\(2\)\]$$
+$$\<\left|M_{if}\right|^2\>=\(\frac{g_W}{M_W}\)^4M_nE_{\nu}\(M_n^2-M_p^2-m_e^2-2M_nE_{\nu}\)$$
+$$C_V=\SI{1.0}{}\pm\SI{0.003}{} \qquad C_A=\SI{1.26}{}\pm\SI{0.02}{}$$
+
+\subsection{$\pi\to l+\nu_l$} %\pi\to l+\nu_l
+$$M_{if}=\frac{g_W^2}{8M_W^2}\[\bar u\(3\)\gamma_{\mu}\(1-\gamma_5\)v\(2\)\]f_{\pi}p^{\mu} \qquad f_{\pi}=m_{\pi}\cos{\(\theta_C\)}$$
+$$\<\left|M_{if}\right|^2\>=\(\frac{g_W}{2M_W}\)^4f_{\pi}^2m_l^2\(m_{\pi}^2-m_l^2\) \qquad \Gamma=\(\frac{g_W}{4M_W}\)^4\frac{f_{\pi}^2}{\pi m_{\pi}}m_l^2\(m_{\pi}^2-m_l^2\)^2$$
+$$\theta_C=\ang{13.1}$$
+
+\subsection{$\nu_\mu+e^-\to \nu_\mu+e^-$} %\nu_\mu+e^-\to \nu_\mu+e^-
+$$M_{if}=\frac{g_Z^2}{8M_Z^2}\[\bar u\(3\)\gamma_{\mu}\(1-\gamma_5\)u\(1\)\] \[\bar u\(4\)\gamma^{\mu}\(C_V-C_A\gamma_5\)u\(2\)\]$$
+$$\sigma=\frac{2}{3\pi}\[\(\frac{g_Z}{2M_Z}\)^2E_{\nu}\]^2\(C_V^2+C_A^2+C_VC_A\)$$
+
+\subsection{$e^-+e^+\to \gamma,Z^0\to f+\bar f$} %e^-+e^+\to \gamma,Z^0\to f+\bar f
+$$\sigma_{\gamma}=\frac{g_e^4Q_f^2}{48\pi E^2} \qquad \sigma_Z=\frac{\(g_Z^2E\)^2}{48\pi}\left\{\frac{\[\(C_V^f\)^2+\(C_A^f\)^2\]\[\(C_V^e\)^2+\(C_A^e\)^2\]}{\(4E^2-M_Z^2\)^2+M_Z^2\Gamma_Z^2}\right\}$$
+$$M_{if}=-\frac{g_Z^2}{4\(q^2-M_Z^2\)}\[\bar u\(4\)\gamma^{\mu}\(C_V^f-C_A^f\gamma_5\)v\(3\)\]\(g_{\mu\nu}-\frac{q_{\mu}q_{\nu}}{M_Z^2}\)\[\bar v\(2\)\gamma^{\mu}\(C_V^f-C_A^f\gamma_5\)u\(1\)\]$$
+
+\subsection{$\nu_e+e^-\to e^-+\nu_e$} %\nu_\mu+e^-\to \nu_\mu+e^-
+$$\<\left|M_{if}\right|^2\>=2\(\frac{g_W}{M_W}\)^4\(p_1\cdot p_2\)\(p_3\cdot p_4\) \qquad \sigma=\frac{G_F^2}{\pi}s \qquad G_F=\frac{\sqrt{2}}{8}\(\frac{g_W}{M_W}\)^2$$
+
+\subsection{$\bar\nu_e+e^-\to e^-+\bar\nu_e$} %\bar\nu_e+e^-\to e^-+\bar\nu_e
+$$\<\left|M_{if}\right|^2\>=2\(\frac{g_W}{M_W}\)^4\(p_1\cdot p_2\)\(p_3\cdot p_4\) \qquad \sigma=\frac{G_F^2}{3\pi}s \qquad G_F=\frac{\sqrt{2}}{8}\(\frac{g_W}{M_W}\)^2$$
+
+\subsection{Neutrino-nucleon deep inelastic scattering. $\nu_{\mu}\(\bar\nu_{\mu}\)+N\to \mu^-\(\mu^+\)+X$} %Neutrino-nucleon deep inelastic scattering
+$$q^2=-4EE'\sin^2{\(\frac{\theta}{2}\)} \qquad x=-\frac{q^2}{2M\(E-E'\)} \qquad y=\frac{\(E-E'\)}{E}$$
+$$\frac{d\sigma^{eN}}{dq^2dx}=\frac{4\pi\alpha^2}{q^4}\[\frac{y^2}{2}\frac{2xF_1^{eN}\(x\)}{x}+\(1-y\)\frac{F_2^{eN}\(x\)}{x}\]$$
+$$\frac{4\pi\alpha^2}{q^4}=\frac{G_F^2}{2\pi} \qquad dq^2=2M_NExdy$$
+$$\frac{d\sigma^{\nu N}}{dxdy}=\frac{G_F^2M_NE}{2\pi}\[\(F_2^{\nu N}\(x\)+xF_3^{\nu N}\(x\)\)\(F_2^{\nu N}\(x\)-xF_3^{\nu N}\(x\)\)\(1-y\)^2\]$$
+$$F_2^{\nu N}=2x\[Q\(x\)+\bar Q\(x\)\] \qquad F_2^{\nu N}=\frac{18}{5}F_2^{eN} \qquad xF_3^{\nu N}=2x\[Q\(x\)-\bar Q\(x\)\]$$
+$$Q\(x\)=d^p\(x\)+d^n\(x\)=d\(x\)+u\(x\) \qquad \bar Q\(x\)=\bar u^p\(x\)+\bar u^n\(x\)=\bar u\(x\)+\bar d\(x\)$$
+$$\textrm{Gross-Llewellyn-Smith: } \int_0^1{F_3^{\nu N}dx}=3$$
+
+\section{QCD} %QCD
+$$g_s=\sqrt{4\pi\alpha_s}$$
+$$\<1 \right|=r \bar b \qquad \<2 \right|=r \bar g \qquad \< 3\right|=b \bar r \qquad \< 4\right|=b \bar g \qquad \< 5\right|=g \bar r \qquad \<6 \right|=g \bar b$$
+$$\<7 \right|=\frac{r\bar r-g\bar g}{\sqrt{2}} \qquad \<8 \right|=\frac{r\bar r+g\bar g-2b\bar b}{\sqrt{6}} \qquad \<9 \right|=\frac{r\bar r+g\bar g+b\bar b}{\sqrt{3}}$$
+$$f=\frac{1}{4}\[c_3^+\lambda^{\alpha}c_1\]\[c_2^+\lambda^{\alpha}c_4\] \qquad \textrm{Vertice quark-gluone: } \frac{-ig_s\lambda^{\alpha}\gamma^{\mu}}{2}$$
+$$\textrm{Propagatore quark: } \frac{i\(\gamma^{\mu}q_{\mu}+m\)}{q^2-m^2} \qquad  \textrm{Propagatore gluone: } -\frac{ig^{\mu\nu}\delta^{\alpha\beta}}{q^2}$$
+$$M_{if}=-\frac{g_s^2}{\(p_1-p_3\)^2}\[\bar u\(3\)\gamma^{\mu}u\(1\)\]\[\bar v\(2\)\gamma_{\mu}v\(4\)\]f$$
+$$\alpha_s\(q^2\)=\frac{\alpha_s\(\mu^2\)}{1+\(\frac{\alpha_s\(\mu^2\)}{12\pi}\)\(11n-2f\)\ln{\(\frac{q^2}{\mu^2}\)}}$$
+$$\alpha_s\(q\)=\frac{12\pi}{\(11n-2f\)\ln{\(\frac{q^2}{\Lambda^2}\)}} \qquad \SI{100}{MeV}<\Lambda<\SI{500}{MeV}$$
+
+\subsection{Produzione di jet} %Produzione di jet
+$$\frac{d\sigma}{dx_1dx_2d\(\cos{\(\theta^*\)}\)}=\sum_{l,m}{\frac{F_l\(x_1\)}{x_1}\frac{F_m\(x_2\)}{x_2}\frac{d\sigma_{l,m}}{d\(\cos{\(\theta^*\)}\)}K}$$
+$$\textrm{Cross section elementare: } \frac{d\sigma_{l,m}}{d\(\cos{\(\theta^*\)}\)} \qquad \textrm{Densità partoni: } \frac{F_{l,m}\(x_{1,2}\)}{x_{1,2}} \qquad K\simeq 2.5$$
+$$F\(x\)=G\(x\)+\frac{4}{9}\(Q\(x\)+\bar Q\(x\)\)$$
+
+\subsection{Drell-Yan production} %Drell-Yan production
+$$p+p\to l^++l^-+X \qquad q+\bar q\to l^++l^-$$
+$$e^++e^-\to adroni, e^++e^- \to \bar q+q \qquad l^\pm+p\to l^\pm+X,l^\pm+q\to l^\pm+q$$
+$$\sigma\(q\bar q\to l^+l^-\)=\frac{4\pi\alpha^2}{9M^2}Q_f^2K \qquad \frac{d^2\sigma}{dx_1dx_2}=\frac{4\pi\alpha^2}{9M^2}KS\(x_1,x_2\)$$
+$$S\(x_1,x_2\)=\sum_f{Q_f^2\[q_B\(x_1\)\bar q_T\(x_2\)+\bar q_B\(x_1\) q_T\(x_2\)\]}$$
+
+\end{document}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{}
+\toprule
+\midrule
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{c c c | c c c | c c c}
+\toprule
+\multirow{3}{*}{Famiglia} 	& Nome 		& \multirow{3}{*}{Simbolo} 	& \multirow{3}{*}{Massa} 	& \multirow{3}{*}{Spin} 	& \multirow{3}{*}{Carica} 	& \multirow{3}{*}{Antiparticella} 	& Tempo 		   & \multirow{3}{*}{Decadimento} \\
+ 					& della 		& 					&  					& 					& 					& 						& di 			   & \\
+ 					& particella 	& 					&  					& 					& 					& 						& dimezzamento   & \\
+\midrule
+ 					& fotone & $\gamma$ & $0$ & $1$ & $0$ & self & $\infty$ & stabile \\
+ 					& gravitone & & $0$ & $2$ & $0$ & self & $\infty$ & stabile \\
+\midrule
+\multirow{6}{*}{Leptoni} 	& neutrino & $\nu_e$ & $0$ & $1/2$ & $0$ & $\bar\nu_e$ & $\infty$ & stabile \\
+ 					& elettrone & $e^-$ & $$ & $1/2$ & $-1$ & $e^+$ & $\infty$ & stabile \\
+ 					& neutrino & $\nu_\mu$ & $0$ & $1/2$ & $0$ & $\bar\nu_\mu$ & $\infty$ & stabile \\
+ 					& muone & $\mu^-$ & $$ & $1/2$ & $-1$ & $\mu^+$ & \SI{2.19e-6}{} & $e^-+\bar\nu_e+\nu_\mu$ \\
+ 					& neutrino & $\nu_\tau$ & $$ & $$ & $$ & $$ & \SI{}{} & $$ \\
+ 					& tau & $\tau^-$ & $$ & $$ & $$ & $$ & \SI{}{} & $$ \\
+\midrule
+\multirow{6}{*}{Mesoni} 	& \multirow{3}{*}{pione} 	& $\pi^+$ & $$ & $0$ & $+1$ & $\pi^-$ & \SI{1.77e-8}{} & $\mu^++\nu_\mu$ \\
+ 					& 					& $\pi^-$ & $$ & $0$ & $-1$ & $\pi^+$ & \SI{1.77e-8}{} & $\mu^-+\bar\nu_\mu$ \\
+ 					& 					& $\pi^0$ & $$ & $0$ & $0$ & self & \SI{1.25e-10}{} & $\gamma+\gamma$ \\
+ 					& \multirow{2}{*}{mesone K} 	& $K^*$ & $$ & $0$ & $+1$ & $\bar K^*$ & \SI{0.85e-8}{} & $\pi^++\pi^0$ \\
+ 					& 						& $K^0$ & $$ & $0$ & $0$ & $\bar K^0$ & \SI{0.64e-10}{} & $\pi^++\pi^-$ \\
+ 					& eta & $\eta$ & $$ & $0$ & $0$ & self & \SI{e-22}{} & $\gamma+\gamma$ \\
+\midrule
+\multirow{9}{*}{Barioni} 	& \multirow{2}{*}{nucleone} 	& $p$ & $$ & $1/2$ & $+1$ & $\bar p$ & $\infty$ & stabile \\
+ 					& 					& $n$ & $$ & $1/2$ & $0$ & $\bar n$ & \SI{702}{} & $p+e^-+\bar\nu_e$ \\
+ 					& lambda & $\Lambda^0$ & $$ & $1/2$ & $0$ & $\bar\Lambda^0$ & \SI{1.82e-10}{} & $p+\pi^-$ \\
+ 					& \multirow{3}{*}{sigma} 	& $\Sigma^+$ & $$ & $1/2$ & $+1$ & $\bar\Sigma^+$ & \SI{5.47e-11}{} & $n+\pi^+$ \\
+ 					& 					& $\Sigma^-$ & $$ & $1/2$ & $-1$ & $\bar\Sigma^-$ & \SI{1.11e-10}{} & $n+\pi^-$ \\
+ 					& 					& $\Sigma^0$ & $$ & $1/2$ & $0$ & $\bar\Sigma^0$ & \SI{e-10}{} & $\Lambda^0+\gamma$ \\
+ 					& \multirow{2}{*}{csi} 	& $\Xi^-$ & $$ & $1/2$ & $-1$ & $\bar\Xi^-$ & \SI{1.18e-10}{} & $\Lambda^0+\pi^+$ \\
+ 					& 				& $\Xi^0$ & $$ & $1/2$ & $0$ & $\bar\Xi^0$ & \SI{2.08e-10}{} & $\Lambda^0+\pi^0$ \\
+ 					& omega & $\Omega^-$ & $$ & $3/2$ & $-1$ & $\bar\Omega^-$ & \SI{e-10}{} & $\Xi^0+\pi^0$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
